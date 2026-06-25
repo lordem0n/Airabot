@@ -123,6 +123,12 @@ async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     text = update.message.text
+    BOT_USERNAME = "@ownerkibandi"
+
+# Group me sirf mention par reply
+if update.message.chat.type != "private":
+    if BOT_USERNAME.lower() not in text.lower():
+        return
 
     print("Message received:", text)
 
